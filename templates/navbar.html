@@ -1,0 +1,60 @@
+{% load static %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<script>
+    	$(document).ready(function(){
+ 		$('.sidenav').sidenav();
+ 	});
+
+
+
+
+</script>
+<style>
+@media only screen and (max-width:768px){
+.moblogo{
+width:20px;
+}
+
+.mob{
+font-size:20px;
+}
+}
+
+}
+
+</style>
+<div class="navbar-fixed">
+    <nav class="blue">
+        <div class="nav-wrapper container">
+            <div class="brand-logo">
+
+                <img class="moblogo" width="50" src="{% static 'logo.jpg' %}" border="0">
+                <a class="mob">Narpavi Educations</a>
+            </div>
+
+            <a href="#" class="sidenav-trigger" data-target="mobile-nav">
+                <i class="material-icons">menu</i>
+            </a>
+            <ul class="right hide-on-med-and-down ">
+                <li><a href="{% url 'home'%}">Home</a></li>
+                <li><a href="{% url 'about'%}">About</a></li>
+                <li><a href="{% url 'courses'%}">Courses</a></li>
+                <li><a href="{% url 'contact'%}">Contact Us</a></li>
+            </ul>
+        </div>
+    </nav>
+</div>
+
+<ul class="sidenav" id="mobile-nav">
+
+    <li><a href="{% url 'home'%}">Home</a></li>
+    <li><a href="{% url 'about'%}">About</a></li>
+    <li><a href="{% url 'courses'%}">Courses</a></li>
+    <li><a href="{% url 'contact'%}">Contact Us</a></li>
+</ul>

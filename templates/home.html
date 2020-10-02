@@ -1,0 +1,177 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<head>
+    <title>Home</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+          integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+            integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+            crossorigin="anonymous"></script>
+    <style>
+        .parallax img {
+        max-width: 50%;
+
+    @media #{$small-and-down} { max-width: 200%; }
+    @media #{$medium-and-up} { width: 100%; }
+}
+
+
+    </style>
+</head>
+<body>
+<div class="container" style="margin-top:3%">
+    <div class="jumbotron">
+        <h1 class="display-4">The Future Begins Here..</h1>
+        <p class="lead">Worried about getting the perfect job just because of lack of software skills.Take a Look at our courses and Increase your Software Skills and stand out of the crowd</p>
+        <a class="btn btn-primary btn-lg" href="{% url 'about'%}" role="button">Learn more</a>
+        <hr class="my-4">
+        <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+
+    </div>
+</div>
+<div class="container">
+    <h2 align="center">Why Choose Narpavi Educations?</h2>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-4" style="margin-top:5%">
+            <div class="card card-body h-100" style="width: 18rem; ">
+                <img src="{% static 'experts.svg' %}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title" style="font-weight: bold;">Learn from Experts</h5>
+                    <p class="card-text">Our real-time professionals helps you to learn any new technology in ease
+                        manner.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4" style="margin-top:5%">
+            <div class="card card-body h-100" style="width: 18rem; ">
+                <img src="{% static 'timings.svg' %}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title" style="font-weight: bold;">Flexible Timings</h5>
+                    <p class="card-text">Learn anytime from anywhere. Utilize your free time to learn new technology
+                        with our experts.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4" style="margin-top:5%">
+            <div class="card card-body h-100" style="width: 18rem; ">
+                <img src="{% static 'support.svg' %}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title" style="font-weight: bold;">24/7 Support</h5>
+                    <p class="card-text">No matter what your current issue is, we have team ready to help
+                        immediately.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="parallax-container">
+    <div class="parallax"><img src="{% static 'onlinel.jpg' %}"></div>
+</div>
+<div class="container" style="margin-top:5%">
+    <h2 align="center">Our Specialities</h2>
+</div>
+
+<div class="container" style="margin-top:3%">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="grey-box-icon">
+                <div class="icon-box-top grey-box-icon-pos">
+                    <img src="{% static 'regular.jpg' %}">
+                </div><!--icon box top -->
+                <h4>Regular Courses</h4>
+                <p>From morning to evening, we offer conventional class room training in Python, Django, Data analytics
+                    and Data Science. Attend these classes and practice the programs to become a successful
+                    professional. </p>
+
+            </div><!--grey box -->
+        </div><!--/span3-->
+        <div class="col-md-3">
+            <div class="grey-box-icon">
+                <div class="icon-box-top grey-box-icon-pos">
+                    <img src="{% static 'weekend.jpg' %}">
+                </div><!--icon box top -->
+                <h4>Weekend Courses</h4>
+                <p>We also offer weekend classes in Python, Django, Data analytics and Data Science for those who cannot
+                    attend regular weekday classes. If you are a job holder, then this would be convenient for you. </p>
+
+            </div><!--grey box -->
+        </div><!--/span3-->
+        <div class="col-md-3">
+            <div class="grey-box-icon">
+                <div class="icon-box-top grey-box-icon-pos">
+                    <img src="{% static 'projects.jpg' %}">
+                </div><!--icon box top -->
+                <h4>Realtime Projects</h4>
+                <p>Professionals from software industry will interact with you and provide you with the knowledge of
+                    developing Projects in Python, Django and other related subjects. </p>
+
+            </div><!--grey box -->
+        </div><!--/span3-->
+        <div class="col-md-3">
+            <div class="grey-box-icon">
+                <div class="icon-box-top grey-box-icon-pos">
+                    <img src="{% static 'placement.jpg' %}">
+                </div><!--icon box top -->
+                <h4>Placement Assistance</h4>
+                <p>We give guidance regarding preparing the resume, facing the interviews and finding out where the jobs
+                    are available. This will help you catch the job earliar than others.</p>
+
+            </div><!--grey box -->
+        </div><!--/span3-->
+    </div>
+</div>
+<div class="container">
+    <h2 align="center">Trending Courses</h2>
+</div>
+<div class="container" style="margin-top:3%">
+    <div class="main-carousel" data-flickity='{ "groupCells": true, "autoPlay": true }'>
+        {% if courses %}
+
+        {% for courses in courses %}
+        {% if courses.trend == "yes" %}
+        <div class="carousel-cell" style="margin-left:5%">
+            <div class="col-md-4">
+                <div class="card card-body h-100" style="width: 18rem; ">
+                    <img src="{{courses.image_url}}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title" style="font-weight: bold;">{{courses.title}}</h5>
+                        <p class="card-text">{{courses.description}}</p>
+                        <p class="card-text">Course Duration : {{courses.duration}}</p>
+                        <a href="/courses/{{courses.id}}" class="btn btn-primary"
+                           style="background-color: #008CBA">Learn
+                            More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+        {% endfor %}
+        {% else %}
+        {% endif %}
+
+    </div>
+</div>
+</body>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+<script>
+      $(document).ready(function(){
+    $('.parallax').parallax();
+    $('.carousel').carousel();
+  });
+
+
+
+</script>
+</html>
+{% endblock %}
+

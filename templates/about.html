@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About us</title>
+    <style>
+        .font{
+        font-family:Georgia;
+        font-size:20px;
+        }
+        .uls{
+        font-size:16px;
+        }
+        @media only screen and (max-width:768px){
+        .font{
+        font-family:Georgia;
+        font-size:15px;
+        }
+        .mobcard{
+        width: 20rem;
+        }
+
+        }
+
+
+
+
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <h3 style="color:#2980B9;" align="center">About Us</h3>
+</div>
+<div class="container">
+    <p class="font">NARPAVI EDUCATIONS is a Tamil Nadu based training center,which is engaged in shaping the students
+        into
+        professionals.We deal with all
+        Emerging technologies like Data Science,Machine Learning and Artificial Intelligence</p>
+    <p class="font">We not only provide them ,we also have basic programming languages like C and C++ and the popular
+        languages like
+        Python and Full Stack Development</p>
+</div>
+<div class=" container">
+    <div class="row">
+        <div class="col">
+            <div class="card" style="width: 32rem;">
+                <div class="card-body">
+                    <h5 class="card-title" style="font-weight: bold;" align="center"> Our Vision</h5>
+                    <p class="card-text">To be a solutions provider for all your educational and professional
+                        matters,where people wants to learn and develop new skills which will help them stand out of the
+                        crowd</p>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card mobcard" style="width: 32rem;">
+                <div class="card-body">
+                    <h5 class="card-title " style="font-weight: bold;" align="center">Our Mission</h5>
+                    <p class="card-text">A spirit of continuous innovation and commitment to provide the students with
+                        high-quality education with cutting-edge technology that meet the expectation of future
+                        generations</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="col-md-12">
+        <h3 style="color:#2980B9;">Why Narpavi Educations?</h3> <br>
+        <p id="special">
+
+            This Institute has been started by eminent faculty Madhu Sri who has proven teaching methodologies
+            to transform even a low standard student into an expert. Her way of teaching combined with practical example
+            programs will make it possible.
+        </p>
+        <p class="font">The Following are the Highlights of <b>Narpavi Educations</b>:</p>
+        <ul class="uls">
+            <li>&#10022; All courses are handled by veteran faculty. <br><br>
+            </li>
+            <li>&#10022; All the courses start with fundamentals and go up to advanced levels.<br><br>
+            </li>
+            <li>&#10022; Every concept is dealt with practical programming examples.<br><br>
+            </li>
+            <li>&#10022; The student can observe his own progress by developing programs in the class room. <br><br>
+            </li>
+            <li>&#10022; Interview questions are covered in the class room. <br><br>
+            </li>
+            <li>&#10022; The student can further participate in Project discussions and develop his own project. <br><br>
+            </li>
+        </ul>
+
+
+        <p></p>
+
+    </div>
+</div>
+
+</body>
+</html>
+{% endblock %}

@@ -1,0 +1,132 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<html lang="en" xmlns:width="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ course_obj.title }}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script>
+    	$(document).ready(function(){
+ 		$('.collapse').collapse()
+ 	});
+
+</script>
+</head>
+<body>
+<div class="container" style="margin-top:5%">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card" style="width: 18rem;">
+                <img src="{{ course_obj.image_url }}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title" style="font-weight: bold;">{{ course_obj.title }}</h5>
+                    <p class="card-text">{{ course_obj.description }}</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Course Duration : {{course_obj.duration}}</li>
+                    <li class="list-group-item">Course Fee : Rs.{{ course_obj.fees }} /-</li>
+                    <li class="list-group-item">Tool Used : {{ course_obj.tool }}</li>
+                </ul>
+            </div>
+
+        </div>
+        <div class="col-md-8">
+            <h4>What's the Course About?</h4>
+            <p>{{course_obj.abt}}</p>
+            <h4>Course Objective</h4>
+            <p>{{course_obj.obj}}</p>
+            <div class="accordion" id="accordionExample">
+                {% for sect in section %}
+                <div class="card">
+                    <div class="card-header" id="headingOne">
+                        <h2 class="mb-0">
+                            <button class="btn  btn-block text-left" type="button" data-toggle="collapse"
+                                    data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">{{ sect.title }}
+                            </button>
+                        </h2>
+                    </div>
+
+                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                         data-parent="#accordionExample">
+                        <div class="card-body">
+                            {% for less in lessons %}
+                            {% if less.section == sect%}
+                            <li>{{ less.title }}</li>
+                            {% endif %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+
+    </div>
+</div>
+<div class="container">
+    <h2 align="center">Features</h2>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-4" style="margin-top:5%">
+            <div class="card card-body h-100" style="width: 18rem; ">
+                <div class="card-body">
+                    <h5 class="card-title" style="font-weight: bold;">Real-Time Experts as Trainers</h5>
+                    <p class="card-text">You will Learn from the Experts from industry who are Passionate in sharing their Knowledge with Learners. Get Personally Mentored by the Experts.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4" style="margin-top:5%">
+            <div class="card card-body h-100" style="width: 18rem; ">
+                <div class="card-body">
+                    <h5 class="card-title" style="font-weight: bold;">LIVE Project</h5>
+                    <p class="card-text">Get an Opportunity to work in Real-time Projects that will give you a Deep Experience. Showcase your Project Experience & Increase your chance of getting Hired!</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4" style="margin-top:5%">
+            <div class="card card-body h-100" style="width: 18rem; ">
+                <div class="card-body">
+                    <h5 class="card-title" style="font-weight: bold;">Certification</h5>
+                    <p class="card-text"> Also, get Equipped to Clear Global Certifications.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4" style="margin-top:5%">
+            <div class="card card-body h-100" style="width: 18rem; ">
+                <div class="card-body">
+                    <h5 class="card-title" style="font-weight: bold;">Affordable Fees</h5>
+                    <p class="card-text">Course Fee is not only Affordable, but you have the option to pay it in Installments. Quality Training at an Affordable Price is our Motto.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4" style="margin-top:5%">
+            <div class="card card-body h-100" style="width: 18rem; ">
+                <div class="card-body">
+                    <h5 class="card-title" style="font-weight: bold;">Flexibility</h5>
+                    <p class="card-text">you get Ultimate Flexibility. Classroom or Online Training? Early morning or Late evenings? Weekdays or Weekends? Regular Pace or Fast Track? - Pick whatever suits you the Best.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4" style="margin-top:5%">
+            <div class="card card-body h-100" style="width: 18rem; ">
+                <div class="card-body">
+                    <h5 class="card-title" style="font-weight: bold;">Placement Support</h5>
+                    <p class="card-text">Tie-up & MOU with more than 1000+ Small & Medium Companies to Support you with Opportunities to Kick-Start & Step-up your Career.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+</body>
+</html>
+{% endblock %}
